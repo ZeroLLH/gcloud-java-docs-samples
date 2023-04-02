@@ -17,8 +17,8 @@ entrypoint: 'java -cp "*" com.example.appengine.demo.jettymain.Main oauth2.war'
 
 # [START gae_java11_oauth2_yaml]
 env_variables:
-  CLIENT_ID: '<YOUR_CLIENT_ID>'
-  CLIENT_SECRET: '<YOUR_CLIENT_SECRET>'
+  CLIENT_ID: 'test1'
+  CLIENT_SECRET: '123'
 # [END gae_java11_oauth2_yaml]
 handlers:
   - url: /.*
