@@ -1,3 +1,3 @@
 queue:
-  - name: pull-queue
+  - name: pull-queue-1
     mode: pull

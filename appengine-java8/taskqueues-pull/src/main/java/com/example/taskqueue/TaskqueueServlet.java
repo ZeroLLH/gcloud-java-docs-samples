@@ -63,7 +63,7 @@ public class TaskqueueServlet extends HttpServlet {
 
       // Add Tasks to Task Queue
       // [START get_queue]
-      Queue q = QueueFactory.getQueue("pull-queue");
+      Queue q = QueueFactory.getQueue("pull-queue-1");
       // [END get_queue]
       if (!useTaggedTasks) {
         for (int i = 0; i < numberOfTasksToAdd; i++) {

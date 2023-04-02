@@ -1,6 +1,6 @@
 <queue-entries>
   <queue>
-    <name>pull-queue</name>
+    <name>pull-queue-1</name>
     <mode>pull</mode>
     <acl>
       <user-email>bar@foo.com</user-email>      <!-- can list, get, lease, delete, and update tasks -->
