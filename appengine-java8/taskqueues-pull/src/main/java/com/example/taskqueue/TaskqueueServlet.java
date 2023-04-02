@@ -95,7 +95,7 @@ public class TaskqueueServlet extends HttpServlet {
         log.info(output.toString());
 
         // Pull tasks from the Task Queue and process them
-        Queue q = QueueFactory.getQueue("pull-queue");
+        Queue q = QueueFactory.getQueue("pull-queue-1");
         if (!useTaggedTasks) {
           // [START lease_tasks]
           List<TaskHandle> tasks = q.leaseTasks(3600, TimeUnit.SECONDS, numberOfTasksToLease);
