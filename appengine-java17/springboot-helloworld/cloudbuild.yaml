@@ -12,3 +12,5 @@ steps:
     entrypoint: gcloud
     args: ['run', 'deploy', 'springboot-helloworld-j17-service', '--image', 'asia-docker.pkg.dev/$PROJECT_ID/my-first-docker-repo/springboot-helloworld-j17:$COMMIT_SHA', '--region', 'asia-northeast1']
 images: ['asia-docker.pkg.dev/$PROJECT_ID/my-first-docker-repo/springboot-helloworld-j17:$COMMIT_SHA']
+options:
+  logging: CLOUD_LOGGING_ONLY
