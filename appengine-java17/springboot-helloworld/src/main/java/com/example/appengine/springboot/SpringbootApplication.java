@@ -32,7 +32,9 @@ public class SpringbootApplication {
 
   @GetMapping("/")
   public String hello() {
-    return "Hello world!";
+    return "Hello world!" +
+            " Java Version: " + System.getProperty("java.version") +
+            " Java Runtime Version: " + System.getProperty("java.runtime.version");
   }
 
 }
