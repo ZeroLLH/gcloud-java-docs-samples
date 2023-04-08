@@ -1,0 +1,6 @@
+steps:
+  - name: 'gcr.io/cloud-builders/mvn'
+    args: ['install']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '--tag=asia-docker.pkg.dev/$PROJECT_ID/my-first-docker-repo/springboot-helloworld-j17', '.']
+images: ['asia-docker.pkg.dev/$PROJECT_ID/my-first-docker-repo/springboot-helloworld-j17']
