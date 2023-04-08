@@ -4,9 +4,11 @@ steps:
     args: ['clean', 'install', '-f', 'appengine-java17/springboot-helloworld/pom.xml']
   # Push the container image to Artifact Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '--tag=asia-docker.pkg.dev/$PROJECT_ID/my-first-docker-repo/springboot-helloworld-j17', 'appengine-java17/springboot-helloworld']
+    args: ['build', '--tag=asia-docker.pkg.dev/$PROJECT_ID/my-first-docker-repo/springboot-helloworld-j17:$COMMIT_SHA', 'appengine-java17/springboot-helloworld']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'asia-docker.pkg.dev/$PROJECT_ID/my-first-docker-repo/springboot-helloworld-j17:$COMMIT_SHA']
   # Deploy container image to Cloud Run
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: gcloud
-    args: ['run', 'deploy', 'springboot-helloworld-j17-service', '--image', 'asia-docker.pkg.dev/$PROJECT_ID/my-first-docker-repo/springboot-helloworld-j17', '--region', 'asia-northeast1']
-images: ['asia-docker.pkg.dev/$PROJECT_ID/my-first-docker-repo/springboot-helloworld-j17']
+    args: ['run', 'deploy', 'springboot-helloworld-j17-service', '--image', 'asia-docker.pkg.dev/$PROJECT_ID/my-first-docker-repo/springboot-helloworld-j17:$COMMIT_SHA', '--region', 'asia-northeast1']
+images: ['asia-docker.pkg.dev/$PROJECT_ID/my-first-docker-repo/springboot-helloworld-j17:$COMMIT_SHA']
